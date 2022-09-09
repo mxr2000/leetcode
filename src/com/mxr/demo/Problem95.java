@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Problem95 {
     public List<TreeNode> generateTrees(int n) {
-        List<TreeNode>[][] dp = new List[n][n];
         return process(1, n);
     }
 
@@ -27,16 +26,6 @@ public class Problem95 {
             }
         }
         return list;
-    }
-
-    List<TreeNode> get(List<TreeNode>[][] dp, int from, int to) {
-        if (to < from) {
-            return null;
-        }
-        return dp[from - 1][to - 1];
-    }
-    void put(List<TreeNode>[][] dp, int from, int to, List<TreeNode> list) {
-        dp[from - 1][to - 1] = list;
     }
 
     public static void main(String[] args) {
